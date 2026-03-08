@@ -1,5 +1,6 @@
 import "./globals.css";
 import Link from "next/link";
+import { Analytics } from "@vercel/analytics/next";
 
 export const metadata = {
   title: "Rishi Bajaj — Product Manager",
@@ -66,6 +67,7 @@ export default function RootLayout({ children }) {
       <body className="font-sans bg-paper text-ink min-h-screen">
         <Nav />
         <main>{children}</main>
+        <Analytics />
       </body>
     </html>
   );
