@@ -1,0 +1,92 @@
+/* ---------------------------------------------------------------
+   Colors — Rishi Bajaj portfolio
+   Brand anchors are the four colors already shipped on rishibajaj.space.
+   Everything else is derived from them.
+
+   Channels are stored as space-separated RGB triplets so Tailwind can
+   apply opacity modifiers (text-ink/85, border-ink/10) via <alpha-value>.
+   The composed rgb() vars exist for plain CSS use in the design system's
+   specimen pages and any non-Tailwind surface.
+   --------------------------------------------------------------- */
+
+:root {
+  /* --- Brand anchors ------------------------------------------- */
+  --paper-rgb: 245 243 238;
+  --ink-rgb: 26 26 24;
+  --terracotta-rgb: 200 75 47;
+  --muted-rgb: 138 136 120;
+
+  --paper: rgb(var(--paper-rgb));
+  --ink: rgb(var(--ink-rgb));
+  --terracotta: rgb(var(--terracotta-rgb));
+  --muted: rgb(var(--muted-rgb));
+
+  /* Terracotta at brand value is 4.21:1 on paper — passes AA for large
+     text and UI, fails the 4.5:1 body-text threshold. This darkened
+     variant measures 4.62:1. Use it for small text (eyebrows, links,
+     captions); keep --terracotta for the accent rule and display type. */
+  --terracotta-text-rgb: 191 69 41;
+  --terracotta-text: rgb(var(--terracotta-text-rgb));
+
+  /* --- Warm neutral ramp --------------------------------------- */
+  /* Anchored at paper and ink. Replaces the stock cool gray-50…900,
+     which reads blue against a warm paper ground. */
+  --sand-50: #faf9f6;
+  --sand-100: #f5f3ee;
+  --sand-200: #eae7df;
+  --sand-300: #dcd8cc;
+  --sand-400: #b8b4a4;
+  --sand-500: #8a8878;
+  --sand-600: #6b6a5d;
+  --sand-700: #4d4c43;
+  --sand-800: #33322c;
+  --sand-900: #1a1a18;
+
+  /* --- Metric semantics ---------------------------------------- */
+  /* Case studies report deltas where "good" is sometimes a decrease
+     (churn, time-to-value). These read as improvement/regression,
+     not up/down. Both clear 4.5:1 on paper. */
+  --positive: #42704f;
+  --negative: #8f4a3f;
+
+  /* --- Semantic layer ------------------------------------------ */
+  /* The component set consumes these names. Rebranding happens here,
+     which is why the 19 components need no per-component edits. */
+  --background: var(--paper);
+  --foreground: var(--ink);
+
+  --card: var(--sand-50);
+  --card-foreground: var(--ink);
+  --popover: var(--sand-50);
+  --popover-foreground: var(--ink);
+
+  --primary: var(--terracotta);
+  --primary-foreground: var(--paper);
+
+  --secondary: var(--sand-200);
+  --secondary-foreground: var(--ink);
+
+  /* Naming divergence, deliberate: this brand uses "muted" for secondary
+     *text* (--muted, #8a8878), whereas shadcn uses it for a *surface*.
+     The shipped home page already relies on text-muted, so the brand
+     meaning wins and the surface takes --surface-muted below. When the
+     19 components are ported, map their bg-muted to bg-sand-200. */
+  --muted-foreground: var(--muted);
+
+  --accent: var(--sand-200);
+  --accent-foreground: var(--ink);
+
+  --destructive: var(--negative);
+  --destructive-foreground: var(--paper);
+
+  --border: rgb(var(--ink-rgb) / 0.1);
+  --input: transparent;
+  --input-background: var(--sand-50);
+  --ring: rgb(var(--terracotta-rgb) / 0.4);
+
+  --text-link: var(--terracotta-text);
+  --text-link-hover: var(--terracotta);
+
+  --surface-muted: var(--sand-200);
+  --surface-highlight: var(--sand-50);
+}

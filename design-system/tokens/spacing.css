@@ -1,0 +1,60 @@
+/* ---------------------------------------------------------------
+   Spacing, radius, elevation — Rishi Bajaj portfolio
+
+   The stock system used a 10px base radius and a four-step shadow
+   ramp on cards and tiles. This identity is flat editorial: structure
+   comes from hairline rules and whitespace, not elevation. Radius is
+   pulled close to square and the shadow ramp is retained only for
+   genuinely floating surfaces (modals, popovers).
+   --------------------------------------------------------------- */
+
+:root {
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+
+  /* Section rhythm. The home page uses mt-16/md:mt-24 at the top and
+     mt-20/mt-24 between blocks. */
+  --section-y: var(--space-20);
+  --section-y-lg: var(--space-24);
+
+  /* Content widths. Editorial column, not the stock 80rem app shell. */
+  --container-max: 72rem;
+  --container-prose: 48rem;
+
+  /* --- Radius --------------------------------------------------- */
+  --radius: 0.125rem;
+  --radius-sm: 0.0625rem;
+  --radius-md: 0.125rem;
+  --radius-lg: 0.25rem;
+  --radius-xl: 0.375rem;
+  --radius-full: 9999px;
+
+  /* --- Rules ---------------------------------------------------- */
+  /* The primary structural device, replacing card shadows. */
+  --rule: 1px solid var(--border);
+  --rule-strong: 1px solid rgb(var(--ink-rgb) / 0.2);
+
+  /* The terracotta accent bar under page headers — w-16 h-[3px] on the
+     home page, tokenized so every route matches. */
+  --accent-bar-w: 4rem;
+  --accent-bar-h: 3px;
+
+  /* --- Elevation ------------------------------------------------ */
+  /* Flat by default. Cards use --rule. Shadows survive only for
+     surfaces that genuinely float above the page. */
+  --shadow-none: none;
+  --shadow-overlay: 0 10px 15px -3px rgb(var(--ink-rgb) / 0.1),
+    0 4px 6px -4px rgb(var(--ink-rgb) / 0.1);
+  --shadow-modal: 0 20px 25px -5px rgb(var(--ink-rgb) / 0.12),
+    0 8px 10px -6px rgb(var(--ink-rgb) / 0.12);
+}

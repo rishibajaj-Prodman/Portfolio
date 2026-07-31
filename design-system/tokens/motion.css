@@ -1,0 +1,64 @@
+/* ---------------------------------------------------------------
+   Motion — Rishi Bajaj portfolio
+
+   The stock system had hover transitions only, no entrance animation.
+   The live site has a staggered fade-up ladder written ad hoc in
+   globals.css. Promoted here to a real primitive, with the
+   prefers-reduced-motion guard the original lacked.
+   --------------------------------------------------------------- */
+
+:root {
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-entrance: 700ms;
+
+  --stagger-step: 100ms;
+  --fade-up-distance: 24px;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(var(--fade-up-distance));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  opacity: 0;
+  animation: fade-up var(--duration-entrance) var(--ease-standard) forwards;
+}
+
+/* Stagger ladder. Each step is one --stagger-step from the last, so
+   retiming the whole sequence is a single token change. */
+.delay-1  { animation-delay: calc(var(--stagger-step) * 1); }
+.delay-2  { animation-delay: calc(var(--stagger-step) * 2); }
+.delay-3  { animation-delay: calc(var(--stagger-step) * 3); }
+.delay-4  { animation-delay: calc(var(--stagger-step) * 4); }
+.delay-5  { animation-delay: calc(var(--stagger-step) * 5); }
+.delay-6  { animation-delay: calc(var(--stagger-step) * 6); }
+.delay-7  { animation-delay: calc(var(--stagger-step) * 7); }
+.delay-8  { animation-delay: calc(var(--stagger-step) * 8); }
+.delay-9  { animation-delay: calc(var(--stagger-step) * 9); }
+.delay-10 { animation-delay: calc(var(--stagger-step) * 10); }
+
+/* Entrance animation is decoration. Anyone who has asked the OS to
+   reduce motion gets the finished state immediately — not a slower
+   version of the same movement. */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-up {
+    opacity: 1;
+    animation: none;
+  }
+
+  .delay-1, .delay-2, .delay-3, .delay-4, .delay-5,
+  .delay-6, .delay-7, .delay-8, .delay-9, .delay-10 {
+    animation-delay: 0ms;
+  }
+}

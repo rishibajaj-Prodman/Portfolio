@@ -1,5 +1,4 @@
 import "./globals.css";
-import Link from "next/link";
 
 export const metadata = {
   title: "Rishi Bajaj — Product Manager",
@@ -15,38 +14,6 @@ export const metadata = {
     type: "website",
   },
 };
-
-function Nav() {
-  const links = [
-    { label: "Work", href: "/work" },
-    { label: "Projects", href: "/projects" },
-    { label: "Writing", href: "/writing" },
-    { label: "Now", href: "/now" },
-  ];
-
-  return (
-    <nav className="flex items-center justify-between py-6 px-6 md:px-12 lg:px-24 max-w-6xl mx-auto w-full">
-      <Link
-        href="/"
-        className="font-serif text-lg text-ink hover:text-terracotta transition-colors"
-      >
-        Rishi Bajaj
-      </Link>
-      <ul className="flex gap-6 md:gap-8">
-        {links.map((link) => (
-          <li key={link.href}>
-            <Link
-              href={link.href}
-              className="text-sm text-muted hover:text-terracotta transition-colors"
-            >
-              {link.label}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
-  );
-}
 
 export default function RootLayout({ children }) {
   return (
@@ -64,8 +31,13 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="font-sans bg-paper text-ink min-h-screen">
-        <Nav />
-        <main>{children}</main>
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:absolute focus:z-[60] focus:top-3 focus:left-3 focus:bg-terracotta focus:text-paper focus:px-4 focus:py-2 focus:rounded-sm focus:text-sm"
+        >
+          Skip to content
+        </a>
+        {children}
       </body>
     </html>
   );
