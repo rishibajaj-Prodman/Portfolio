@@ -1,0 +1,71 @@
+/* ---------------------------------------------------------------
+   Typography — Rishi Bajaj portfolio
+
+   The stock system declared no webfont and no serif at all. This
+   identity is serif-first: DM Serif Display for headings and display
+   type, DM Sans for body and UI. Sizes below reproduce what is already
+   shipped on the home page so the rebrand does not drift from it.
+   --------------------------------------------------------------- */
+
+:root {
+  --font-serif: "DM Serif Display", Georgia, "Times New Roman", serif;
+  --font-sans: "DM Sans", system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+
+  --font-size: 16px;
+
+  /* --- Body / UI scale (sans) ---------------------------------- */
+  --text-xs: 0.75rem;
+  --text-xs-lh: 1rem;
+  --text-sm: 0.875rem;
+  --text-sm-lh: 1.25rem;
+  --text-base: 1rem;
+  --text-base-lh: 1.5rem;
+  --text-lg: 1.125rem;
+  --text-lg-lh: 1.75rem;
+  --text-xl: 1.25rem;
+  --text-xl-lh: 1.75rem;
+
+  /* --- Display scale (serif) ----------------------------------- */
+  /* h1 on the home page is text-5xl / md:6xl / lg:7xl — preserved. */
+  --display-sm: 1.5rem;
+  --display-sm-lh: 2rem;
+  --display-md: 1.875rem;
+  --display-md-lh: 2.25rem;
+  --display-lg: 2.25rem;
+  --display-lg-lh: 2.5rem;
+  --display-xl: 3rem;
+  --display-xl-lh: 1.1;
+  --display-2xl: 3.75rem;
+  --display-2xl-lh: 1.1;
+  --display-3xl: 4.5rem;
+  --display-3xl-lh: 1.05;
+
+  /* --- Weights -------------------------------------------------- */
+  /* DM Serif Display ships a single weight (400). Emphasis in display
+     type comes from size and color, never from faux bold. */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  /* --- Editorial details ---------------------------------------- */
+  /* The eyebrow treatment on the home page, tokenized. */
+  --tracking-eyebrow: 0.2em;
+  --tracking-tight: -0.01em;
+
+  /* Long-form case studies need a measure cap; the current page
+     hardcodes max-w-3xl. */
+  --measure: 65ch;
+  --measure-narrow: 48ch;
+}
+
+body {
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  font-weight: var(--font-weight-normal);
+}

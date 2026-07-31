@@ -1,0 +1,11 @@
+<!-- @dsCard group="Brand" viewport="700x150" name="Motion" subtitle="Staggered fade-up entrance, 700ms / 24px / 100ms steps; reduced-motion safe" -->
+<html><head><link rel="stylesheet" href="../styles.css"></head><body style="margin:0;font-family:var(--font-sans);width:700px;height:140px;box-sizing:border-box;padding:16px;background:var(--background);display:flex;align-items:center"><div style="display:flex;flex-direction:column;gap:10px;width:100%">
+<div style="display:flex;gap:8px">
+<div class="animate-fade-up delay-1" style="flex:1;height:40px;background:var(--terracotta);border-radius:var(--radius-md)"></div>
+<div class="animate-fade-up delay-2" style="flex:1;height:40px;background:var(--terracotta);border-radius:var(--radius-md)"></div>
+<div class="animate-fade-up delay-3" style="flex:1;height:40px;background:var(--terracotta);border-radius:var(--radius-md)"></div>
+<div class="animate-fade-up delay-4" style="flex:1;height:40px;background:var(--terracotta);border-radius:var(--radius-md)"></div>
+<div class="animate-fade-up delay-5" style="flex:1;height:40px;background:var(--terracotta);border-radius:var(--radius-md)"></div>
+</div>
+<div style="font-size:12px;color:var(--muted-foreground);line-height:1.6">Entrance: <code>.animate-fade-up</code> + <code>.delay-1…10</code> — 700ms, 24px travel, 100ms between steps.<br>Hover: color/background fade, 150ms. Retime the whole ladder via <code>--stagger-step</code>.<br><strong>prefers-reduced-motion</strong> resolves to the finished state immediately, not a slower animation.</div>
+</div></body></html>
